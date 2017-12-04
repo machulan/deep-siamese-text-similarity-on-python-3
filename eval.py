@@ -42,7 +42,7 @@ print("\nEvaluating...\n")
 # Evaluation
 # ==================================================
 checkpoint_file = FLAGS.model
-print checkpoint_file
+print(checkpoint_file)
 graph = tf.Graph()
 with graph.as_default():
     session_conf = tf.ConfigProto(
@@ -83,6 +83,6 @@ with graph.as_default():
             all_d = np.concatenate([all_d, sim])
             print("DEV acc {}".format(batch_acc))
         for ex in all_predictions:
-            print ex 
+            print(ex) 
         correct_predictions = float(np.mean(all_d == y_test))
         print("Accuracy: {:g}".format(correct_predictions))
