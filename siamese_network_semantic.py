@@ -52,7 +52,7 @@ class SiameseLSTMw2v(object):
                 trainable=trainableEmbeddings,name="W")
             self.embedded_words1 = tf.nn.embedding_lookup(self.W, self.input_x1)
             self.embedded_words2 = tf.nn.embedding_lookup(self.W, self.input_x2)
-        print self.embedded_words1
+        print(self.embedded_words1)
         # Create a convolution + maxpool layer for each filter size
         with tf.name_scope("output"):
             self.out1=self.stackedRNN(self.embedded_words1, self.dropout_keep_prob, "side1", embedding_size, sequence_length, hidden_units)
